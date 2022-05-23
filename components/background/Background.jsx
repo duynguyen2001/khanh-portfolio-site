@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import backgroundWord from './backgroundWord.svg';
 import { DropdownMenu } from '../menu/DropdownMenu';
 import KhanhImage from './KhanhImage.svg';
+import Image from 'next/image';
 
 export const Background = ({ children, ...props }) => (
   <div
@@ -22,7 +23,7 @@ export const Background = ({ children, ...props }) => (
       >
         阮慶唯
       </text>
-      <img src={KhanhImage} className="px-8 py-8 dark:invert"></img>
+      <Image src={KhanhImage} className="px-8 py-8 dark:invert"></Image>
     </div>
 
     <div className="bg-white/[.85] w-full z-20 md:w-5/6 xl:w-3/4 		">
