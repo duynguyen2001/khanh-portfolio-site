@@ -6,4 +6,41 @@ module.exports = {
   ],
   darkMode: 'class', // or 'media' or 'class'
   presets: [require('./utils/tailwind-preset')],
+  theme: {
+    extend: {
+      backgroundImage: (theme) => ({}),
+      width: {
+        128: '32rem',
+      },height: {
+        128: '32rem',
+      },
+      fontFamily: {
+        nom: ["HanNomMinh", "regular"],
+        ven: ["VEN", "regular"],
+      },
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        primary: "#1D438A",
+        secondary: "#D4AF56",
+        tertiary: "#D87963"
+      }
+    },
+    screens: {
+      sm: '640px',
+      // => @media (min-width: 640px) { ... }
+
+      md: '768px',
+      // => @media (min-width: 768px) { ... }
+
+      lg: '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      xl: '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    },
+  },
 };

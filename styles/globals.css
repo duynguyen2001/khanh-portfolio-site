@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
-
+@font-face {
+  font-family: "VEN";
+  src: url("../public/fonts/VenDisplayTypeface/VEN.otf");
+}
+@font-face {
+  font-family: "HanNomMinh";
+  src: url("../public/fonts/HanNomMinh/HanNomMinh.otf");
+}
 h1,
 h2,
 h3,
