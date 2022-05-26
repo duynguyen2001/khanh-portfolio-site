@@ -7,7 +7,6 @@ import ArrowIcon from '../components/ArrowIcon';
 import { getGlobalData } from '../utils/global-data';
 import SEO from '../components/SEO';
 import { Background } from '../components/background/Background.jsx';
-import Blog from './blog';
 
 export default function Index({ globalData }) {
   return (

@@ -6,7 +6,7 @@ import KhanhImage from './KhanhImage.svg';
 export const Background = ({ children, ...props }) => (
   <div
   style={{ backgroundImage: `url(${backgroundWord})` }}
-    className="flex flex-col h-full w-full bg-cover items-center bg-repeat"
+    className="flex flex-col h-full w-full bg-cover items-center bg-repeat min-h-screen	"
     {...props}
   >
     <div className="fixed	w-full h-full dark:backdrop-invert"></div>
@@ -25,7 +25,7 @@ export const Background = ({ children, ...props }) => (
       <img src={KhanhImage} alt="" className="px-8 py-8 dark:invert" ></img>
     </div>
 
-    <div className="bg-white/[.85] w-full z-20 md:w-5/6 xl:w-3/4 ">
+    <div className="bg-white/[.85] dark:bg-black/[.85] w-full z-20 md:w-5/6 xl:w-3/4 ">
       {children}
     </div>
   </div>
