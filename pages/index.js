@@ -1,27 +1,36 @@
-import Link from 'next/link';
-
 import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Layout, { GradientBackground } from '../components/Layout';
-import ArrowIcon from '../components/ArrowIcon';
 import { getGlobalData } from '../utils/global-data';
-import SEO from '../components/SEO';
+import { serialize } from 'next-mdx-remote/serialize';
 import { Background } from '../components/background/Background.jsx';
+import { MDXRemote } from 'next-mdx-remote';
+import { fetchSanityClient } from '../utils/sanity';
+import hydrateComponents from "../hydrateComponents";
 
-export default function Index({ globalData }) {
+export default function Index({ globalData, bodySource }) {
+  const components = hydrateComponents(bodySource.frontmatter.imports);
   return (
     <Background>
-      <SEO title={globalData.name} description={globalData.blogTitle} />
-      <Header name={globalData.name} />
       <main className="w-full">
-        
+        <ul className="w-full prose dark:prose-dark prose-headings:font-ven prose-headings:text-primary dark:prose-headings:text-primarycontrast">
+          <MDXRemote {...bodySource} components={components} />
+        </ul>
       </main>
       <Footer copyrightText={globalData.footerText} />
     </Background>
   );
 }
 
-export function getStaticProps() {
+export async function getStaticProps() {
   const globalData = getGlobalData();
-  return { props: { globalData } };
+  const allPosts = await fetchSanityClient(
+    `*[_type == "page" && slug.current == 'first-page'] [0]{
+        slug,
+        title,
+        content
+    }`
+  );
+  const mdxSource = await serialize(allPosts.content, {
+    parseFrontmatter: true,
+  });
+  return { props: { globalData: globalData, bodySource: mdxSource } };
 }
