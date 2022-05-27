@@ -7,6 +7,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import Footer from '../../../components/Footer';
 import { MDXRemote } from 'next-mdx-remote';
 import hydrateComponents from '../../../hydrateComponents';
+import { Author } from '../../../components/author/Author';
 export default function Post({
   slug,
   title,
@@ -14,18 +15,21 @@ export default function Post({
   publishedAt,
   mainImage,
   bodySource,
-  globalData
+  globalData,
 }) {
   const components = hydrateComponents(bodySource.frontmatter.imports);
   return (
     <Background>
       <main className="w-full">
-        <h1 className="text-3xl lg:text-5xl text-center mb-12 font-ven">
+        <h1 className="text-3xl lg:text-5xl text-center mb-12 font-ven text-primary dark:text-primarycontrast">
           <Link href={'/blog-posts/posts/' + slug}>{title}</Link>
         </h1>
         <></>
-        <ul className="w-full prose dark:prose-dark">
+        <ul className="w-full prose dark:prose-dark prose-headings:font-ven prose-headings:text-primary dark:prose-headings:text-primarycontrast ">
           <MDXRemote {...bodySource} components={components} />
+        </ul>
+        <ul>
+          <Author slug={author.slug.current} author={author.name} bio={author.bio} imageURL={author.imageURL}/>
         </ul>
       </main>
       <Footer copyrightText={globalData.footerText} />
@@ -56,7 +60,12 @@ export async function getStaticProps({ params }) {
     `*[_type == "post" && slug.current == $slug] [0]{
       slug,
       title,
-      author -> {name, slug},
+      "author": *[_type == "author" && _ref == ^._ref] [0] {
+        slug,
+        name,
+        "imageURL": image.asset-> url,
+        bio
+       },
       publishedAt,
       mainImage,
       body

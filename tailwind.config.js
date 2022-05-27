@@ -5,26 +5,31 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: 'class', // or 'media' or 'class'
-  presets: [require('./utils/tailwind-preset')],
+  presets: [
+    require('./utils/tailwind-preset'),
+    require('@tailwindcss/typography'),
+  ],
   theme: {
     extend: {
       backgroundImage: (theme) => ({}),
       width: {
         128: '32rem',
-      },height: {
+      },
+      height: {
         128: '32rem',
       },
       fontFamily: {
-        nom: ["HanNomMinh", "regular"],
-        ven: ["VEN", "regular"],
+        nom: ['HanNomMinh', 'regular'],
+        ven: ['VEN', 'regular'],
       },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        primary: "#1D438A",
-        secondary: "#D4AF56",
-        tertiary: "#D87963"
-      }
+        primary: '#1D438A',
+        primarycontrast: '#e2bc75',
+        secondary: '#D4AF56',
+        tertiary: '#D87963',
+      },
     },
     screens: {
       sm: '640px',

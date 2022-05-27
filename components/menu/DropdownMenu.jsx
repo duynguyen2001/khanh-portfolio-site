@@ -35,9 +35,9 @@ export const DropdownMenu = ({ ...props }) => (
         <Menu.Items className="">
           <div className="px-1 py-1 flex flex-col ">
             <MenuItem link ="/page/about-me">About Me</MenuItem>
-            <MenuItem link ="">My Projects</MenuItem>
+            <MenuItem link ="/blog-posts/category/personal-projects">My Projects</MenuItem>
             <MenuItem link ="/blog-posts">Personal Blogs</MenuItem>
-            <MenuItem link ="">Contact me</MenuItem>
+            <MenuItem link ="/page/contact-me">Contact me</MenuItem>
 
           </div>
         </Menu.Items>

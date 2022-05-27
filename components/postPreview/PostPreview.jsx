@@ -16,7 +16,7 @@ export const PostPreview = ({ slug, title, description, date, link, ...props }) 
     <Link as={link + slug} href={`${link}+[slug]`}>
       <a className="py-6 lg:py-10 px-6 lg:px-16 block focus:outline-none focus:ring-4">
         {date && <p className="uppercase mb-3 font-bold opacity-60">{dateParser(date)}</p>}
-        <h2 className="text-2xl md:text-3xl font-ven">{title}</h2>
+        <h2 className="text-2xl md:text-3xl font-ven text-primary dark:text-primarycontrast">{title}</h2>
         {description && (
           <p className="mt-3 text-lg opacity-60">{description}</p>
         )}

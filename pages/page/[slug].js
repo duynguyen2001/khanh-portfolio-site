@@ -17,11 +17,11 @@ export default function Post({
   return (
     <Background>
       <main className="w-full">
-        <h1 className="text-3xl lg:text-5xl text-center mb-12 font-ven">
+        <h1 className="text-3xl lg:text-5xl text-center mb-12 font-ven text-primary dark:text-primarycontrast">
           <Link href={'/blog-posts/posts/' + slug}>{title}</Link>
         </h1>
         <></>
-        <ul className="w-full prose dark:prose-dark">
+        <ul className="w-full prose  dark:prose-dark prose-headings:font-ven prose-headings:text-primary dark:prose-headings:text-primarycontrast">
           <MDXRemote {...bodySource} components={components} />
         </ul>
       </main>
