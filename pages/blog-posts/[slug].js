@@ -15,8 +15,8 @@ export default function Post({
 }) {
   return (
     <Background>
-      <main className="w-full">
-        <h1 className="text-3xl lg:text-5xl text-center mb-12 font-ven text-primary dark:text-primarycontrast">
+      <main className="w-full py-4">
+        <h1 className="text-6xl py-4 text-center mb-12 font-ven text-primary dark:text-primarycontrast">
           {title}
         </h1>
         <p className='max-w-none p-2 prose dark:prose-dark'>{description}</p>

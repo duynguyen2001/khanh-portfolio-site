@@ -21,6 +21,7 @@ module.exports = {
       fontFamily: {
         nom: ['HanNomMinh', 'regular'],
         ven: ['VEN', 'regular'],
+        aileron: ['AileronHeavy','regular']
       },
       colors: {
         transparent: 'transparent',

@@ -8,8 +8,8 @@ import { CategoryButton } from '../../components/categoryButton/CategoryButton.j
 export default function Index({ globalData, posts, categories }) {
   return (
     <Background>
-      <main className="w-full">
-        <h1 className="text-3xl lg:text-5xl text-center mb-12 font-ven text-primary dark:text-primarycontrast">
+      <main className="w-full py-4">
+        <h1 className="text-6xl py-4 text-center mb-12 font-ven text-primary dark:text-primarycontrast">
           {globalData.blogTitle}
         </h1>
         <div className="inline-flex">

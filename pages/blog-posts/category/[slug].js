@@ -8,15 +8,15 @@ import { PostPreview } from '../../../components/postPreview/PostPreview';
 export default function Post({ title, description, slug, posts, globalData }) {
   return (
     <Background>
-      <main className="w-full">
+      <main className="w-full py-4">
         <div className="flex flex-col items-center ">
-          <h1 className="text-2xl lg:text-4xl text-center mb-12 font-ven text-primary dark:text-primarycontrast">
+          <h1 className="text-6xl py-4 text-center mb-12 font-ven text-primary dark:text-primarycontrast">
             <Link href={'/blog-posts/author/' + slug}>{title}</Link>
           </h1>
         </div>
 
         <></>
-        <ul className="max-w-none p-2 prose dark:prose-dark prose-headings:font-ven prose-headings:text-primary dark:prose-headings:text-primarycontrast px-2">
+        <ul className="max-w-none p-2 prose dark:prose-dark prose-headings:font-aileron prose-headings:text-primary dark:prose-headings:text-primarycontrast px-2">
           {description}
         </ul>
         <ul>

@@ -10,6 +10,10 @@
   font-family: "HanNomMinh";
   src: url("../public/fonts/HanNomMinh/HanNomMinh.otf");
 }
+@font-face {
+  font-family: "AileronHeavy";
+  src: url("../public/fonts/Aileron/Aileron-Heavy.otf");
+}
 h1,
 h2,
 h3,

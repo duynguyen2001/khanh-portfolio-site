@@ -16,12 +16,11 @@ export default function Post({
   const components = hydrateComponents(bodySource.frontmatter.imports);
   return (
     <Background>
-      <main className="w-full">
-        <h1 className="text-3xl lg:text-5xl text-center mb-12 font-ven text-primary dark:text-primarycontrast">
+      <main className="w-full py-4">
+        <h1 className="text-6xl py-4 text-center mb-12 font-ven text-primary dark:text-primarycontrast">
           <Link href={'/blog-posts/posts/' + slug}>{title}</Link>
         </h1>
-        <br></br>
-        <div className="max-w-none p-2 prose dark:prose-dark prose-headings:font-ven prose-headings:text-primary dark:prose-headings:text-primarycontrast">
+        <div className="max-w-none p-4 prose dark:prose-dark prose-headings:font-aileron prose-headings:text-primary dark:prose-headings:text-primarycontrast">
           <MDXRemote {...bodySource} components={components} />
         </div>
       </main>

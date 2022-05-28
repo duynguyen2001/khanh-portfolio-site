@@ -12,20 +12,20 @@ export default function Post({ author, slug, bodySource, globalData }) {
   const components = hydrateComponents(bodySource.frontmatter.imports);
   return (
     <Background>
-      <main className="w-full">
+      <main className="w-full py-4">
         <div className="flex flex-col items-center ">
           <img
             className="w-28 h-28 rounded-full"
             src={author.imageURL}
             alt="Rounded avatar"
           />
-          <h1 className="text-2xl lg:text-4xl text-center mb-12 font-ven text-primary dark:text-primarycontrast">
+          <h1 className="text-6xl py-4 text-center mb-12 font-ven text-primary dark:text-primarycontrast">
             <Link href={'/blog-posts/author/' + slug}>{author.name}</Link>
           </h1>
         </div>
 
         <></>
-        <ul className="max-w-none p-2 prose dark:prose-dark prose-headings:font-ven prose-headings:text-primary dark:prose-headings:text-primarycontrast px-2">
+        <ul className="max-w-none p-2 prose dark:prose-dark prose-headings:font-aileron prose-headings:text-primary dark:prose-headings:text-primarycontrast px-2">
           <MDXRemote {...bodySource} components={components} />
         </ul>
         <ul>

@@ -10,8 +10,8 @@ export default function Index({ globalData, bodySource }) {
   const components = hydrateComponents(bodySource.frontmatter.imports);
   return (
     <Background>
-      <main className="w-full">
-        <ul className="max-w-none p-2 prose dark:prose-dark prose-headings:font-ven prose-headings:text-primary dark:prose-headings:text-primarycontrast">
+      <main className="w-full py-4">
+        <ul className="max-w-none p-2 prose dark:prose-dark prose-headings:font-aileron prose-headings:text-primary dark:prose-headings:text-primarycontrast">
           <MDXRemote {...bodySource} components={components} />
         </ul>
       </main>
