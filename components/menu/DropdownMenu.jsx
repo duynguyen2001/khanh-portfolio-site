@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { Menu, Transition } from '@headlessui/react';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import Link from 'next/dist/client/link';
-const MenuItem = ({children, link}) => (
+const MenuItem = ({ children, link }) => (
   <Menu.Item>
     {
-      <button className="py-1 text-left hover:opacity-50">
-        <Link href={link}>{children}</Link>
-      </button>
+      <Link href={link}>
+        <button className="py-1 text-left hover:opacity-50">{children}</button>
+      </Link>
     }
   </Menu.Item>
 );
@@ -34,11 +34,12 @@ export const DropdownMenu = ({ ...props }) => (
       >
         <Menu.Items className="">
           <div className="px-1 py-1 flex flex-col ">
-            <MenuItem link ="/page/about-me">About Me</MenuItem>
-            <MenuItem link ="/blog-posts/category/personal-projects">My Projects</MenuItem>
-            <MenuItem link ="/blog-posts">Personal Blogs</MenuItem>
-            <MenuItem link ="/page/contact-me">Contact me</MenuItem>
-
+            <MenuItem link="/page/about-me">About Me</MenuItem>
+            <MenuItem link="/blog-posts/category/personal-projects">
+              My Projects
+            </MenuItem>
+            <MenuItem link="/blog-posts">Personal Blogs</MenuItem>
+            <MenuItem link="/page/contact-me">Contact me</MenuItem>
           </div>
         </Menu.Items>
       </Transition>

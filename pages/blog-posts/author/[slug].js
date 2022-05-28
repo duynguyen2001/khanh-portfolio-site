@@ -85,7 +85,6 @@ export async function getStaticProps({ params }) {
   );
   const mdxSource = await serialize(author.bio, { parseFrontmatter: true });
   const globalData = getGlobalData();
-  console.log(author);
   return {
     props: {
       author: author,

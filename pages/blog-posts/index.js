@@ -55,7 +55,6 @@ export async function getStaticProps() {
       }`
   );
   const categories = await fetchSanityClient(`*[_type == "category"]{slug, title}`);
-  console.log(posts);
   const globalData = getGlobalData();
   return { props: { globalData: globalData, posts: posts, categories: categories } };
 }

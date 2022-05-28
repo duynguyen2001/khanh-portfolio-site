@@ -60,7 +60,6 @@ export async function getStaticProps({ params }) {
     }
   );
   const mdxSource = await serialize(allPosts.content);
-  console.log(mdxSource.compiledSource);
   const globalData = getGlobalData();
   return {
     props: {
