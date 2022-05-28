@@ -1,5 +1,4 @@
 import { Background } from '../../components/background/Background.jsx';
-import client from '../../client.js';
 import { fetchSanityClient } from '../../utils/sanity.js';
 import { PostPreview } from '../../components/postPreview/PostPreview.jsx';
 import { getGlobalData } from '../../utils/global-data.js';

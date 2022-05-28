@@ -3,7 +3,7 @@ import { getGlobalData } from '../../../utils/global-data';
 import { fetchSanityClient } from '../../../utils/sanity';
 import { Background } from '../../../components/background/Background';
 import Link from 'next/dist/client/link';
-import { serialize } from 'next-mdx-remote/serialize';
+import serialize from '../../../utils/mdxSerialize';
 import Footer from '../../../components/Footer';
 import { MDXRemote } from 'next-mdx-remote';
 import hydrateComponents from '../../../hydrateComponents';
@@ -25,7 +25,7 @@ export default function Post({
           <Link href={'/blog-posts/posts/' + slug}>{title}</Link>
         </h1>
         <></>
-        <ul className="w-full prose dark:prose-dark prose-headings:font-ven prose-headings:text-primary dark:prose-headings:text-primarycontrast ">
+        <ul className="max-w-none p-2 prose dark:prose-dark prose-headings:font-ven prose-headings:text-primary dark:prose-headings:text-primarycontrast ">
           <MDXRemote {...bodySource} components={components} />
         </ul>
         <ul>
@@ -74,7 +74,7 @@ export async function getStaticProps({ params }) {
       slug: params.slug,
     }
   );
-  const mdxSource = await serialize(allPosts.body, { parseFrontmatter: true });
+  const mdxSource = await serialize(allPosts.body);
   const globalData = getGlobalData();
   return {
     props: {

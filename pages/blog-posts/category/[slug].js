@@ -2,10 +2,7 @@ import { getGlobalData } from '../../../utils/global-data';
 import { fetchSanityClient } from '../../../utils/sanity';
 import { Background } from '../../../components/background/Background';
 import Link from 'next/dist/client/link';
-import { serialize } from 'next-mdx-remote/serialize';
 import Footer from '../../../components/Footer';
-import { MDXRemote } from 'next-mdx-remote';
-import hydrateComponents from '../../../hydrateComponents';
 import { PostPreview } from '../../../components/postPreview/PostPreview';
 
 export default function Post({ title, description, slug, posts, globalData }) {
@@ -19,7 +16,7 @@ export default function Post({ title, description, slug, posts, globalData }) {
         </div>
 
         <></>
-        <ul className="w-full prose dark:prose-dark prose-headings:font-ven prose-headings:text-primary dark:prose-headings:text-primarycontrast px-2">
+        <ul className="max-w-none p-2 prose dark:prose-dark prose-headings:font-ven prose-headings:text-primary dark:prose-headings:text-primarycontrast px-2">
           {description}
         </ul>
         <ul>

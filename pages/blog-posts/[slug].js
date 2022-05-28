@@ -19,7 +19,7 @@ export default function Post({
         <h1 className="text-3xl lg:text-5xl text-center mb-12 font-ven text-primary dark:text-primarycontrast">
           {title}
         </h1>
-        <p className='px-2 prose dark:prose-dark'>{description}</p>
+        <p className='max-w-none p-2 prose dark:prose-dark'>{description}</p>
         <br></br>
         <div className="inline-flex">
           <CategoryButton slug="" title="All Posts" />
