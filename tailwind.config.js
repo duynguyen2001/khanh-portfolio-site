@@ -21,15 +21,22 @@ module.exports = {
       fontFamily: {
         nom: ['HanNomMinh', 'regular'],
         ven: ['VEN', 'regular'],
-        aileron: ['AileronHeavy','regular']
+        aileron: ['AileronHeavy','regular'],
+        barberComplete: ['barberComplete','regular'],
+        barberFill: ['barberFill','regular'],
+        barberRight: ['barberRight','regular'],
+        barberOutline: ['barberOutline','regular'],
+        barberShadow: ['barberShadow','regular'],
+        danhda: ['DanhDa','regular']
+        
       },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        primary: '#1D438A',
-        primarycontrast: '#e2bc75',
-        secondary: '#D4AF56',
-        tertiary: '#D87963',
+        primary: '#4865ab',
+        primarycontrast: '#f76f61',
+        secondary: '#e6d65a',
+        tertiary: '#f76f61',
       },
     },
     screens: {

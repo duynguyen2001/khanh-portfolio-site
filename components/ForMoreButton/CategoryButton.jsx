@@ -3,7 +3,7 @@ import ArrowIcon from '../ArrowIcon';
 import Link from 'next/dist/client/link';
 import PropTypes from 'prop-types';
 
-export const ForMoreButton = ({ slug, title, ...props }) => (
+export const CategoryButton = ({ slug, title, ...props }) => (
   <Link
     href={slug === '' ? '/blog-posts' : '/blog-posts/[slug]'}
     as={slug === '' ? '' : `/blog-posts/${slug}`}
@@ -14,7 +14,7 @@ export const ForMoreButton = ({ slug, title, ...props }) => (
   </Link>
 );
 
-ForMoreButton.propTypes = {
+CategoryButton.propTypes = {
   /***
    * slug id for the posts
    */
@@ -25,7 +25,7 @@ ForMoreButton.propTypes = {
   title: PropTypes.string,
 };
 
-ForMoreButton.defaultProps = {
+CategoryButton.defaultProps = {
   slug: '',
   title: 'This is the title',
 };

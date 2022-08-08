@@ -16,11 +16,11 @@ const MenuItem = ({ children, link }) => (
 export const DropdownMenu = ({ ...props }) => (
   <Menu
     as="div"
-    className="mx-2 my-2 py-2 px-2 z-10 inline-block text-left font-ven text-primary text-xl"
+    className="mx-2 my-2 py-2 px-2 z-10 inline-block text-left font-ven text-primarycontrast text-xl"
     {...props}
   >
-    <div className="px-2 border-primary " style={{ borderLeft: '2px solid' }}>
-      <Menu.Button className="border-primary hover:opacity-50">
+    <div className="px-2 border-primarycontrast " style={{ borderLeft: '2px solid' }}>
+      <Menu.Button className="border-primarycontrast hover:opacity-50">
         Menu
       </Menu.Button>
       <Transition
