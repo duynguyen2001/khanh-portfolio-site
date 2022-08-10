@@ -3,7 +3,7 @@ import { fetchSanityClient } from '../../utils/sanity';
 import { Background } from '../../components/background/Background';
 import Footer from '../../components/Footer';
 import { PostPreview } from '../../components/postPreview/PostPreview';
-import { CategoryButton } from '../../components/categoryButton/CategoryButton';
+import {CategoryButton} from '../../components/categoryButton/CategoryButton';
 
 export default function Post({
   title,

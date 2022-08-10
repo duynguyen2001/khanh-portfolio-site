@@ -13,19 +13,19 @@ export const LandingPage = ({ ...props }) => (
       <DropdownMenu className="mx-2 my-2 py-2 px-2 z-10 inline-block text-left font-ven text-white text-xl lg:flex-end lg:mx-[-1]" />
       <div className="text-3xl md:text-5xl lg:text-7xl px-5 md:px-10 py-10 md:py-20">
         <div className="absolute font-barberComplete text-[#E89E0B]">
-          HI, I'M KHÁNH-DUY NGUYỄN
+          HI, I&quot;M KHÁNH-DUY NGUYỄN
         </div>
         <div className="absolute font-barberFill text-[#E20D0F]">
-          HI, I'M KHÁNH-DUY NGUYỄN
+          HI, I&quot;M KHÁNH-DUY NGUYỄN
         </div>
         <div className="absolute font-barberRight text-[##E6D65A] ">
-          HI, I'M KHÁNH-DUY NGUYỄN
+          HI, I&quot;M KHÁNH-DUY NGUYỄN
         </div>
         <div className="absolute font-barberOutline text-white">
-          HI, I'M KHÁNH-DUY NGUYỄN
+          HI, I&quot;M KHÁNH-DUY NGUYỄN
         </div>
         <div className="absolute font-barberShadow text-[#E89E0B]">
-          HI, I'M KHÁNH-DUY NGUYỄN
+          HI, I&quot;M KHÁNH-DUY NGUYỄN
         </div>
       </div>
     </div>
