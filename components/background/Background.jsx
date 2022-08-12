@@ -13,7 +13,7 @@ export const Background = ({ children, ...props }) => (
       className="flex fixed flex-row -bottom-24 -right-24 border-2 border h-96 w-96 md:h-128 md:w-128 rounded-full"
       style={{
         boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
-        background: 'rgba( 230, 214, 90, 0.9 )',
+        background: 'rgba( 230, 214, 90, 0.7 )',
         backdropFilter: 'blur( 1.5px )',
         WebkitBackdropFilter: 'blur( 1.5px )',
         border: '1px solid rgba( 255, 255, 255, 0.18 )',
@@ -40,7 +40,7 @@ export const Background = ({ children, ...props }) => (
       style={{
         boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
         backdropFilter: 'blur( 1.5px )',
-        opacity: '0.9',
+        opacity: '0.8',
         WebkitBackdropFilter: 'blur( 1.5px )',
         border: '1px solid rgba( 255, 255, 255, 0.18 )',
       }}
@@ -50,10 +50,10 @@ export const Background = ({ children, ...props }) => (
     </div>
 
     <div
-      className="w-full z-20 md:w-5/6 xl:w-3/4 "
+      className="w-full z-20 md:w-5/6 xl:w-3/4 px-4"
       style={{
         boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
-        background: 'rgba( 255, 255, 255, 0.2 )',
+        background: 'rgba( 255, 255, 255, 0.85 )',
         backdropFilter: 'blur( 1.5px )',
         borderRadius: '30px',
         WebkitBackdropFilter: 'blur( 1.5px )',

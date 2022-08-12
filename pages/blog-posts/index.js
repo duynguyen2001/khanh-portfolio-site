@@ -12,7 +12,7 @@ export default function Index({ globalData, posts, categories }) {
         <h1 className="text-6xl py-4 text-center mb-12 font-ven text-primary dark:text-primarycontrast">
           {globalData.blogTitle}
         </h1>
-        <div className="inline-flex">
+        <div className="inline-flex flex-wrap justify-start	">
           <CategoryButton slug="" title="All Posts" />
           {categories.map(function (category, index) {
             return (
