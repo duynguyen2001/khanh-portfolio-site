@@ -21,7 +21,7 @@ export default function Post({
         </h1>
         <p className='max-w-none p-2 prose dark:prose-dark'>{description}</p>
         <br></br>
-        <div className="inline-flex">
+        <div className="inline-flex  flex-wrap justify-start	">
           <CategoryButton slug="" title="All Posts" />
           {categories.map(function (post, index) {
             return (
