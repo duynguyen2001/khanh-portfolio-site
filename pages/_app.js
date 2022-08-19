@@ -1,5 +1,7 @@
 import '../styles/globals.css';
 import 'prismjs/themes/prism-tomorrow.css';
+import '../styles/LandingPageBackground.css';
+
 
 function MyApp({ Component, pageProps }) {
   return (
