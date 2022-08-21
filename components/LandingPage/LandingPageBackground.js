@@ -1,16 +1,89 @@
 import { v4 as uuid } from 'uuid';
 import useWindowSize from '../../hooks/useWindowDimensions';
 import { motion } from 'framer-motion';
+import { MotionConfig, useMotionValue } from "framer-motion";
+import { Shapes } from "./Shapes";
+import useMeasure from "react-use-measure";
+
+import { transition } from "./settings";
+import { Suspense, useState } from "react";
+
 
 export const LandingPageBackground = ({ ...props }) => {
   const { height, width } = useWindowSize();
   const changeSizeBasedOnWindowSize = (ls) =>
     width < 768 ? ls[0] : width < 1024 ? ls[1] : ls[2];
+
+    const [ref, bounds] = useMeasure({ scroll: false });
+  const [isHover, setIsHover] = useState(false);
+  const [isPress, setIsPress] = useState(false);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const resetMousePosition = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
   return (
     <div {...props}>
-      <GlassPolygon
+      <MotionConfig transition={transition}>
+      <motion.button
+        ref={ref}
+        initial={false}
+        animate={isHover ? "hover" : "rest"}
+        whileTap="press"
+        variants={{
+          rest: { scale: 1 },
+          hover: { scale: 1.5 },
+          press: { scale: 1.4 }
+        }}
+        onHoverStart={() => {
+          resetMousePosition();
+          setIsHover(true);
+        }}
+        onHoverEnd={() => {
+          resetMousePosition();
+          setIsHover(false);
+        }}
+        onTapStart={() => setIsPress(true)}
+        onTap={() => setIsPress(false)}
+        onTapCancel={() => setIsPress(false)}
+        onPointerMove={(e) => {
+          mouseX.set(e.clientX - bounds.x - bounds.width / 2);
+          mouseY.set(e.clientY - bounds.y - bounds.height / 2);
+        }}
+      >
+        <motion.div
+          className="shapes"
+          variants={{
+            rest: { opacity: 0 },
+            hover: { opacity: 1 }
+          }}
+        >
+          <div className="pink blush" />
+          <div className="blue blush" />
+          <div className="container">
+            <Suspense fallback={null}>
+              <Shapes
+                isHover={isHover}
+                isPress={isPress}
+                mouseX={mouseX}
+                mouseY={mouseY}
+              />
+            </Suspense>
+          </div>
+        </motion.div>
+        <motion.div
+          variants={{ hover: { scale: 0.85 }, press: { scale: 1.1 } }}
+          className="label"
+        >
+          play
+        </motion.div>
+      </motion.button>
+    </MotionConfig>
+      {/* <GlassPolygon
         type="circle"
-        opacity="0.45"
+        opacity="0.45" 
         length={changeSizeBasedOnWindowSize(['150', '200', '250'])}
         color="#FFD5E3 0%, #B485D2 100%"
         rotateGradient="176"
@@ -41,9 +114,10 @@ export const LandingPageBackground = ({ ...props }) => {
     <GlassPolygon
       type="polygon"
       side="6"
+      opacity="0.45"
       rotateGradient="90"
       color=" #ec5d5d 0%, #35944ec9 40%, #bcd223a6 100%"
-    />
+    /> */}
     </div>
   );
 };
@@ -78,10 +152,10 @@ const GlassPolygon = ({
 
   return (
     <motion.div
-    transition={spring}
-    initial={{ y: -300, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    exit={{ y: 300, opacity: 0 }}
+    transition={{type: "keyframes"}}
+    initial={{ y: -300 }}
+    animate={{ y: 0, }}
+    exit={{ y: 300 }}
     >
       <svg
         width={width}
@@ -97,7 +171,6 @@ const GlassPolygon = ({
           >
             {color.split(',').map((str, index) => {
               str = str.trim().split(' ');
-              console.log(str);
               return <stop key={index} offset={str[1]} stopColor={str[0]} />;
             })}
           </linearGradient>
@@ -109,8 +182,6 @@ const GlassPolygon = ({
             height={height}
             filterUnits="userSpaceOnUse"
           >
-            {/* <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
-          <feComposite operator="in" in2="blur" /> */}
             <feGaussianBlur stdDeviation="3" result="blur" />
             <feFlood floodOpacity="0.161" />
             <feComposite operator="in" in2="blur" />
