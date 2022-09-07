@@ -10,8 +10,9 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
   const lightRotateY = useSmoothTransform(mouseX, spring, mouseToLightRotation);
 
   return (
-    <Canvas shadows dpr={[1, 2]} resize={{ scroll: false, offsetSize: true }}>
-      <Camera mouseX={mouseX} mouseY={mouseY} />
+    <div style={{border: "white 1px solid" , height: "100vh", width: "100vw"} }>
+    <Canvas shadows size={{}}  >
+      <Camera mouseX={mouseX} mouseY={mouseY}  />
       <MotionConfig transition={transition}>
         <motion.group
           center={[0, 0, 0]}
@@ -24,16 +25,19 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
           animate={isHover ? "hover" : "rest"}
           dispose={null}
           variants={{
-            hover: { z: isPress ? -0.9 : 0 }
+            hover: { z: isPress ? -0.9 : 1 },
           }}
         >
-          <Sphere />
+          <Sphere position={[-1, -1, 1]}/>
+          
+          <Sphere position={[0.5, 0.5, 0]}/>
           <Cone />
           <Torus />
           <Icosahedron />
         </motion.group>
       </MotionConfig>
     </Canvas>
+    </div>
   );
 }
 
@@ -50,10 +54,10 @@ export function Lights() {
   );
 }
 
-export function Sphere() {
+export function Sphere({position, ...args}) {
   return (
-    <motion.mesh position={[-0.5, -0.5, 0]} variants={{ hover: { z: 2 } }}>
-      <sphereGeometry args={[0.4]} />
+    <motion.mesh position={position} variants={{ hover: { z: 2 } }}>
+      <sphereGeometry args={[2]} />
       <Material />
     </motion.mesh>
   );
@@ -119,7 +123,7 @@ export function Icosahedron() {
 }
 
 export function Material() {
-  return <meshPhongMaterial color="#fff" specular="#61dafb" shininess={10} />;
+  return <meshPhongMaterial color="#fff" wireframe={true} specular="#61dafb" shininess={10} />;
 }
 
 // Adapted from https://github.com/pmndrs/drei/blob/master/src/core/PerspectiveCamera.tsx
