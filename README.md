@@ -2,7 +2,7 @@
 
 Hello and welcome to my personal website! My name is Khanh Duy Nguyen and I am a rising senior with a passion for data science. I have gained an understanding of applied statistical models and am eager to continue learning and growing in this field. In my free time, I enjoy interacting with others who share my interests and exploring new ways to analyze and visualize data. As I prepare to enter the workforce, I am excited to apply my skills and knowledge to real-world problems and make an impact in the data science community. 
 
-[![](https://github.dev/duynguyen2001/khanh-portfolio-site/blob/aaf4aced12a20b632e05be7f673867e963f57cf6/static-gifs/ezgif-2-ef5a41cfce.gif)](https://github.com/duynguyen2001/khanh-portfolio-site/blob/main/static-gifs/ezgif-2-ef5a41cfce.gif)
+![](https://media.giphy.com/media/GMommLrH0ZeoUUYEfS/giphy.gif)
 
 [Demo](https://youtu.be/1rkhTnmgNLU)
 
