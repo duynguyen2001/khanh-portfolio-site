@@ -6,6 +6,8 @@ Hello and welcome to my personal website! My name is Khanh Duy Nguyen and I am a
 
 [Demo](https://youtu.be/1rkhTnmgNLU)
 
+[Link to Webpage](https://khanh-duy.com/)
+
 ## Technologies
 
 ### Next.js
