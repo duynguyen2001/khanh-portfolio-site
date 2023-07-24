@@ -22,11 +22,6 @@ module.exports = {
         nom: ['HanNomMinh', 'regular'],
         ven: ['VEN', 'regular'],
         aileron: ['AileronHeavy','regular'],
-        barberComplete: ['barberComplete','regular'],
-        barberFill: ['barberFill','regular'],
-        barberRight: ['barberRight','regular'],
-        barberOutline: ['barberOutline','regular'],
-        barberShadow: ['barberShadow','regular'],
         danhda: ['DanhDa','regular']
         
       },

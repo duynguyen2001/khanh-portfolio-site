@@ -15,26 +15,6 @@
   src: url("../public/fonts/Aileron/Aileron-Heavy.otf");
 }
 @font-face {
-  font-family: "BarberComplete";
-  src: url("../public/fonts/Barber/Barber-Complete.otf");
-}
-@font-face {
-  font-family: "BarberFill";
-  src: url("../public/fonts/Barber/Barber-Fill.otf");
-}
-@font-face {
-  font-family: "BarberRight";
-  src: url("../public/fonts/Barber/Barber-Right.otf");
-}
-@font-face {
-  font-family: "BarberOutline";
-  src: url("../public/fonts/Barber/Barber-Outline.otf");
-}
-@font-face {
-  font-family: "BarberShadow";
-  src: url("../public/fonts/Barber/Barber-Shadow.otf");
-}
-@font-face {
   font-family: "DanhDa";
   src: url("../public/fonts/DanhDa/DanhDa-Bold.otf");
 }
